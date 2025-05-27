@@ -1,0 +1,23 @@
+class_mapping = {
+  'human.pedestrian.adult':0,
+  'human.pedestrian.child':0,
+  'human.pedestrian.construction_worker':0,
+  'human.pedestrian.personal_mobility':0,
+  'human.pedestrian.police_officer':0,
+  'human.pedestrian.stroller':0,
+  'human.pedestrian.wheelchair':0,
+  'movable_object.barrier':1,
+  'movable_object.pushable_pullable':2,
+  'movable_object.trafficcone':3,
+  'vehicle.bicycle':4,
+  'vehicle.bus.bendy':5,
+  'vehicle.bus.rigid':5,
+  'car': 6,
+  'vehicle.car':6,
+  'vehicle.emergency.police':6,
+  'vehicle.construction':7,
+  'vehicle.motorcycle':8,
+  'vehicle.trailer':9,
+  'vehicle.truck':10,
+}
+num_classes = max(class_mapping.values()) + 1

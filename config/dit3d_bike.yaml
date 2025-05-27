@@ -1,0 +1,36 @@
+experiment:
+    id: dit3d_ve_bike
+##Data
+data:
+    data_dir: /home/ekirby/scania/ekirby/datasets/bikes_from_nuscenes/cleaned_bikes_token_to_data_with_indices.json
+    dataloader: nuscenes
+    gen_class_name: bike
+    
+
+##Training
+train:
+    uncond_prob: 0.1
+    uncond_w: 1.
+    n_gpus: 1
+    num_workers: 8
+    max_epoch: 2000
+    lr: 0.0001
+    batch_size: 8
+    decay_lr: 1.0e-4
+
+diff:
+    beta_start: 3.5e-5
+    beta_end: 0.007
+    beta_func: 'linear'
+    t_steps: 1000
+    s_steps: 50
+    reg_weight: 0.0
+    visualize: False
+
+##Network
+model:
+    embeddings: voxel
+    conditioning: dit3d
+    config: DiT-XS/4
+    in_channels: 3
+    num_classes: 1

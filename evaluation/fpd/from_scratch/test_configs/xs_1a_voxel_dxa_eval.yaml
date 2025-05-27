@@ -1,0 +1,6 @@
+experiment_id: xs_1a_voxel_dxa_gen
+experiment_root_dir: /home/ekirby/scania/ekirby/datasets/nuscenes_generated_bikes/xs_1a_voxel_dxa_gen
+objects_to_test: generated
+test_split: val
+filtered_instance_ids: null
+batch_size: 16

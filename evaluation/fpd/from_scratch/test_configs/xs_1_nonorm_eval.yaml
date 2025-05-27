@@ -1,0 +1,6 @@
+experiment_id: xs_4_1a_cross_pointnet_impcfg_4chfix_nonorm_gen_2
+experiment_root_dir: /home/ekirby/scania/ekirby/datasets/nuscenes_generated_bikes/xs_4_1a_cross_pointnet_impcfg_4chfix_nonorm_gen_2
+objects_to_test: generated
+test_split: val
+filtered_instance_ids: null
+batch_size: 16

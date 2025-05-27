@@ -1,0 +1,35 @@
+experiment:
+    id: logen_bike
+##Data
+data:
+    data_dir: /home/ekirby/scania/ekirby/datasets/logen_datasets/bikes_from_nuscenes/cleaned_bikes_token_to_data_with_indices.json
+    dataloader: nuscenes
+    gen_class_name: bike
+
+##Training
+train:
+    uncond_prob: 0.1
+    uncond_w: 1.
+    n_gpus: 1
+    num_workers: 8
+    max_epoch: 2000
+    lr: 0.0001
+    batch_size: 8
+    decay_lr: 1.0e-4
+    
+diff:
+    beta_start: 3.5e-5
+    beta_end: 0.007
+    beta_func: 'linear'
+    t_steps: 1000
+    s_steps: 50
+    reg_weight: 0.0
+    visualize: False
+    
+##Network
+model:
+    embeddings: pointnet
+    conditioning: logen
+    num_classes: 1
+    in_channels: 4
+    size: DiT-XS/4

@@ -1,0 +1,7 @@
+[project]
+name = "logen"
+version = "1.0"
+description = "LiDAR Object Generation"
+
+[tool.setuptools]
+packages = ["logen"]
