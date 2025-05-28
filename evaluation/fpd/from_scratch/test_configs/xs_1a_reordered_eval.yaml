@@ -1,5 +1,5 @@
 experiment_id: xs_4_1a_cross_pointnet_impcgf_4chfix_reordered_gen_999
-experiment_root_dir: /home/ekirby/scania/ekirby/datasets/nuscenes_generated_bikes/xs_4_1a_cross_pointnet_impcgf_4chfix_reordered_gen_999
+experiment_root_dir: nuscenes_generated_bikes/xs_4_1a_cross_pointnet_impcgf_4chfix_reordered_gen_999
 objects_to_test: generated
 test_split: val
 filtered_instance_ids: null

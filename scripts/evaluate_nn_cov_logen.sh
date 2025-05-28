@@ -1,12 +1,7 @@
 # !/bin/bash
-pip install "git+https://github.com/facebookresearch/pytorch3d.git"
-cd /home/nsamet/no_backup/repos/LiDAR-Object-Generation/metrics/PyTorchEMD
-pip install .
-cd /home/nsamet/no_backup/repos/LiDAR-Object-Generation/
-
 eval_model=nuscenes
 split=val
-root_dir=/home/nsamet/scania/nsamet/augmented_nuscenes_datasets
+root_dir=augmented_nuscenes_datasets
 channels=3
 distance_method=EMD
 

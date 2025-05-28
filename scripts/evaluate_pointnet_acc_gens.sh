@@ -2,14 +2,14 @@
 
 eval_model=nuscenes
 split=val
-root_dir=/home/nsamet/scania/nsamet/replaced_nuscenes_datasets
+root_dir=replaced_nuscenes_datasets
 model_type=$1 #
 
 # channels=4
-# pnet_ckpt=/home/nsamet/no_backup/repos/LiDAR-Object-Generation/evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects/last.ckpt
+# pnet_ckpt=evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects/last.ckpt
 
 channels=3
-pnet_ckpt=/home/nsamet/no_backup/repos/LiDAR-Object-Generation/evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects_3ch/last.ckpt
+pnet_ckpt=evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects_3ch/last.ckpt
 
 # Compute BARRIERS
 model=${model_type}_barriers_gen_999

@@ -35,7 +35,7 @@ class Pointnet(nn.Module):
 class SPVCNN(nn.Module):
     def __init__(self,gen_model, input_channels):
         super(SPVCNN, self).__init__()
-        self.main_path = "/home/nsamet/scania/nsamet"
+        self.main_path = ""
         self.channel = input_channels
         self.gen_feats = np.load(f"{self.main_path}/{gen_model}_replacement_val_dataset_{self.channel}CH_spvcnn_instance_feats.npz", allow_pickle=True)['feat_data'].item()
         self.org_feats = np.load(f"{self.main_path}/org_val_{self.channel}CH_spvcnn_instance_feats.npz", allow_pickle=True)['feat_data'].item()

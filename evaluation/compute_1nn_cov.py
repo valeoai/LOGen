@@ -278,7 +278,7 @@ def get_1nn_cov(model_name, root, split, object_class, input_channels, distance_
 
 @click.command()
 @click.option('--model_name', '-m', type=str, default='xs_4_1a_cross_pointnet_impcgf_4chfix_reordered_gen_2')
-@click.option('--root', '-r', type=str, default='/home/nsamet/scania/ekirby/datasets/augmented_nuscenes_datasets')
+@click.option('--root', '-r', type=str)
 @click.option('--split', '-s', type=str, default='train')
 @click.option('--object_class', '-cls', type=str)
 @click.option('--input_channels', '-i', type=int, default=4)

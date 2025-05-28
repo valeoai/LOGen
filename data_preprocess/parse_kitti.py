@@ -7,7 +7,7 @@ from collections import defaultdict
 import glob
 import sklearn
 import multiprocessing as mp
-import random
+import sys
 
 IGNORE_LABEL = 255
 
@@ -90,9 +90,9 @@ def extract_objects_from_ply(ply_path, output_dir, sequence_name, min_points=5, 
 
 
 def process_ply_file(args):
-    ply_path, is_dynamic = args
+    ply_path, is_dynamic, base_output_dir = args
     sequence_name = os.path.basename(ply_path)[:-4]
-    output_dir = os.path.expandvars(f"/home/ekirby/scania/ekirby/datasets/logen_datasets/KITTI-360/processed/train/objects/{sequence_name}")
+    output_dir = os.path.join(base_output_dir, sequence_name)
     print("Parsing", sequence_name)
     obj_data = extract_objects_from_ply(ply_path, output_dir, sequence_name, is_dynamic=is_dynamic)
     metadata_path = os.path.join(output_dir, "metadata.json")
@@ -102,10 +102,10 @@ def process_ply_file(args):
 
 
 if __name__ == '__main__':
-    static_ply_paths = glob.glob("/home/ekirby/scania/ekirby/datasets/logen_datasets/KITTI-360/data_3d_semantics/train/*/static/*.ply")
-    dynamic_ply_paths = glob.glob("/home/ekirby/scania/ekirby/datasets/logen_datasets/KITTI-360/data_3d_semantics/train/*/dynamic/*.ply")
-    
-    all_tasks = [(p, False) for p in static_ply_paths] + [(p, True) for p in dynamic_ply_paths]
+    static_ply_paths = glob.glob(sys.argv[1]) # Something like "KITTI-360/data_3d_semantics/train/*/static/*.ply"
+    dynamic_ply_paths = glob.glob(sys.argv[2]) # Something like "KITTI-360/data_3d_semantics/train/*/dynamic/*.ply"
+    output_dir = sys.argv[3] # Something like KITTI-360/processed/train/objects/
+    all_tasks = [(p, False, output_dir) for p in static_ply_paths] + [(p, True, output_dir) for p in dynamic_ply_paths]
 
     with mp.Pool(processes=os.cpu_count()) as pool:
         obj_counts = list(tqdm(pool.imap(process_ply_file, all_tasks), total=len(all_tasks)))

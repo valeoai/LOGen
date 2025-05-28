@@ -16,7 +16,7 @@ def parse_objects_from_nuscenes(points_threshold, object_name, object_tag, range
     nusc = NuScenes(version='v1.0-trainval', dataroot=dataroot, verbose=True)
 
     # Directory to save extracted data
-    output_dir = f'/home/ekirby/scania/ekirby/datasets/all_objects_features_filtered/{object_name}_from_nuscenes'
+    output_dir = f'{object_name}_from_nuscenes'
     os.makedirs(output_dir, exist_ok=True)
 
     train_split = set(splits.train)

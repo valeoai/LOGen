@@ -1,5 +1,5 @@
 experiment_id: xs_1a_logen_bikes_cleaned_gen_999
-experiment_root_dir: /home/ekirby/scania/ekirby/datasets/nuscenes_generated_bikes/xs_1a_logen_bikes_cleaned_gen_999
+experiment_root_dir: nuscenes_generated_bikes/xs_1a_logen_bikes_cleaned_gen_999
 objects_to_test: generated
 test_split: train
 filtered_instance_ids: null

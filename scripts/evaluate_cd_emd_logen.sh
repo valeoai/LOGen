@@ -4,7 +4,7 @@ cd evaluation
 
 eval_model=nuscenes
 split=val
-root_dir=/home/ekirby/scania/ekirby/augmented_nuscenes_datasets
+root_dir=augmented_nuscenes_datasets
 channels=3
 
 # Compute BIKES
@@ -46,6 +46,3 @@ python compute_cd_emd.py -m $model -s $split -i $channels -r $root_dir -cls cons
 # Compute TRAILER
 model=xs_1a_logen_trailers_gen_999
 python compute_cd_emd.py -m $model -s $split -i $channels -r $root_dir -cls trailer
-
-
-#cluster jobs add --name="cd_emd_logen" --gpus 1 "cd /home/nsamet/no_backup/repos/LiDAR-Object-Generation/metrics/PyTorchEMD && pip install . && cd /home/nsamet/no_backup/repos/LiDAR-Object-Generation && ./scripts/evaluate_cd_emd_logen.sh >> >> evaluate_cd_emd_logen.txt"

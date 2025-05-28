@@ -190,7 +190,7 @@ def save_statistics(real_pointclouds, path, model, batch_size, dims, cuda):
 def calculate_fpd(model, gen_dl, real_dl, dims=1808, device=None, split='train', datatype='modelnet'):
     """Calculates the FPD of two pointclouds"""
     m1, s1 = calculate_activation_statistics(gen_dl, model, dims, device)
-    # statistic_save_path = f'/home/ekirby/workspace/LiDAR-Object-Generation/evaluation/fpd/statistics/pre_statistics_real_{datatype}_{split}.npz'
+    # statistic_save_path = f'pre_statistics_real_{datatype}_{split}.npz'
     # if os.path.isfile(statistic_save_path):
     #     f = np.load(statistic_save_path)
     #     m2, s2 = f['m'][:], f['s'][:]

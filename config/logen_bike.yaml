@@ -2,7 +2,7 @@ experiment:
     id: logen_bike
 ##Data
 data:
-    data_dir: /home/ekirby/scania/ekirby/datasets/logen_datasets/bikes_from_nuscenes/cleaned_bikes_token_to_data_with_indices.json
+    data_dir: YOUR PATH TO LIDAR OBJECTS
     dataloader: nuscenes
     gen_class_name: bike
 

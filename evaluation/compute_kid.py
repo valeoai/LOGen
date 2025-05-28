@@ -88,23 +88,14 @@ def get_kid(model_name, root, split, object_class, evaluation_model, input_chann
     with open(f'./evaluation/kid/experiments_distance_gens_05x_{input_channels}ch/{model_name}/kid_{evaluation_model}_{split}_{object_class}.txt', 'w') as f:
         print('Kernel Pointcloud Distance <<< {:.10f} >>>'.format(kid_mean), file=f)
 
-# @click.command()
-# @click.option('--model_name', '-m', type=str, default='xs_4_1a_cross_pointnet_impcgf_4chfix_reordered_gen_2')
-# # @click.option('--root', '-r', type=str, default='/home/nsamet/scania/nsamet/replaced_nuscenes_datasets')
-# @click.option('--root', '-r', type=str, default='/home/nsamet/scania/ekirby/logen-experiments/3_6_25_logen_closer_all_val')
-# @click.option('--split', '-s', type=str, default='train')
-# @click.option('--object_class', '-cls', type=str)
-# @click.option('--evaluation_model', '-e', type=str,)
-# @click.option('--input_channels', '-i', type=int, default=4)
-# @click.option('--pointnet_checkpoint_path', '-pckpt', type=str, default='evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects/last.ckpt')
 @click.command()
 @click.option('--model_name', '-m', type=str, default='xs_logen_kitti360_bicycle_gen_split_by_sequence')
-@click.option('--root', '-r', type=str, default='/home/nsamet/scania/ekirby/logen-experiments/KITTI-360/bikes_gen_split_by_sequence')
+@click.option('--root', '-r', type=str)
 @click.option('--split', '-s', type=str, default='val')
 @click.option('--object_class', '-cls', type=str, default='bicycle')
 @click.option('--evaluation_model', '-e', type=str, default='nuscenes')
 @click.option('--input_channels', '-i', type=int, default=3)
-@click.option('--pointnet_checkpoint_path', '-pckpt', type=str, default='/home/nsamet/iveco/scratch_iveco/nsamet/repos/LiDAR-Object-Generation/evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects_3ch/last.ckpt')
+@click.option('--pointnet_checkpoint_path', '-pckpt', type=str)
 def main(model_name, root, split, object_class, evaluation_model, input_channels, pointnet_checkpoint_path):
     get_kid(model_name, root, split, object_class, evaluation_model, input_channels, pointnet_checkpoint_path)
 

@@ -30,7 +30,7 @@ def get_cd_emd(model_name, root, split, object_class, input_channels):
 
 @click.command()
 @click.option('--model_name', '-m', type=str, default='xs_logen_kitti360_bicycle_gen_split_by_sequence')
-@click.option('--root', '-r', type=str, default='/home/nsamet/scania/ekirby/logen-experiments/KITTI-360/bikes_gen_split_by_sequence')
+@click.option('--root', '-r', type=str)
 @click.option('--split', '-s', type=str, default='val')
 @click.option('--object_class', '-cls', type=str, default='bicycle')
 @click.option('--input_channels', '-i', type=int, default=3)

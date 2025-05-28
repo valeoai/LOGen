@@ -27,7 +27,7 @@ def extract_semantic_instance_ids(nusc, samples_file, split, class_name):
 
             points_from_object = points_in_box(box, points=points[:,:3].T)
             object_isolated_label_mask = (points_from_object & (labels == nusc.lidarseg_name2idx_mapping[sample['class']]).flatten())
-            filename = f'/home/ekirby/scania/ekirby/datasets/nuscenes_cleaned_object_sample_indices/{sample["instance_token"]}.npy'
+            filename = f'{sample["instance_token"]}.npy'
             np.save(filename, object_isolated_label_mask)
             sample['object_sample_index'] = filename
             new_samples.append(sample)
@@ -36,9 +36,9 @@ def extract_semantic_instance_ids(nusc, samples_file, split, class_name):
 
 
 @click.command
-@click.option('--instances_file', '-f', type=str, default='/home/ekirby/scania/ekirby/datasets/bikes_from_nuscenes/cleaned_bikes_from_nuscenes.json')
-@click.option('--save_file', '-s', type=str, default='/home/ekirby/scania/ekirby/datasets/bikes_from_nuscenes/TEST.json')
-@click.option('-class_name', '-cls', type=str, default='')
+@click.option('--instances_file', '-f', type=str) # Input objects
+@click.option('--save_file', '-s', type=str)
+@click.option('-class_name', '-cls', type=str)
 def main(instances_file, save_file, class_name):
     dataroot = '/datasets_local/nuscenes'
 

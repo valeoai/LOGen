@@ -69,6 +69,6 @@ def combine_and_split_metadata(metadata_root, output_root, seed=42, train_ratio=
     print(f"✔ Wrote per-class splits into: {by_class_dir}/<class_name>/train_val_split_by_sequence.json")
 
 if __name__ == "__main__":
-    metadata_root = "/home/ekirby/scania/ekirby/datasets/logen_datasets/KITTI-360/processed/objects"
-    output_root = "/home/ekirby/scania/ekirby/datasets/logen_datasets/KITTI-360/processed/combined"
+    metadata_root = "/tmp/logen_datasets/KITTI-360/processed/objects"
+    output_root = "/tmp/logen_datasets/KITTI-360/processed/combined"
     combine_and_split_metadata(metadata_root, output_root)

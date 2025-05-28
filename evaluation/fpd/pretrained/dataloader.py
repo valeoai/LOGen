@@ -29,7 +29,7 @@ class NuscenesGeneratedObjectsDataLoader(Dataset):
         self.input_channels = input_channels
         self.dirs = paths
         print(root) 
-        # with open('/home/nsamet/scania/ekirby/datasets/augmented_nuscenes_datasets/nuscenes_scene_token_to_split.json', 'r') as f:
+        # with open('nuscenes_scene_token_to_split.json', 'r') as f:
         #     self.split_mapping = json.load(f)[split]
         # if logen:
         #     print("LOGen")

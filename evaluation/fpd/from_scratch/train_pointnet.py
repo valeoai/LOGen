@@ -66,7 +66,7 @@ def main(args):
         )
     else:
         data = NuscenesObjectsDataModule(
-            data_dir='/home/nsamet/scania/ekirby/datasets/all_objects_nuscenes_cleaned/all_objects_nuscenes_cleaned_train_val.json',
+            data_dir='all_objects_nuscenes_cleaned_train_val.json',
             num_workers=args.num_workers,
             batch_size=args.batch_size,
             data_to_use='original_data',
@@ -77,12 +77,12 @@ def main(args):
     #Add callbacks
     lr_monitor = LearningRateMonitor(logging_interval='step')
     checkpoint_saver = ModelCheckpoint(
-                                dirpath='/home/nsamet/no_backup/repos/LiDAR-Object-Generation/evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects_3ch',
+                                dirpath='evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects_3ch',
                                 filename='{epoch:02d}',
                                 save_last=True,
                             )
 
-    tb_logger = pl_loggers.TensorBoardLogger(f'/home/nsamet/no_backup/repos/LiDAR-Object-Generation/evaluation/fpd/from_scratch/experiments/{experiment_id}',
+    tb_logger = pl_loggers.TensorBoardLogger(f'evaluation/fpd/from_scratch/experiments/{experiment_id}',
                                              default_hp_metric=False)
     #Setup trainer
     if torch.cuda.device_count() > 1:

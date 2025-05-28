@@ -79,12 +79,12 @@ def get_kid(model_name, root, split, object_class, evaluation_model, input_chann
 
 @click.command()
 @click.option('--model_name', '-m', type=str, default='xs_4_1a_cross_pointnet_impcgf_4chfix_reordered_gen_2')
-@click.option('--root', '-r', type=str, default='/home/nsamet/scania/ekirby/logen-experiments/3_6_25_logen_closer_all_val')
+@click.option('--root', '-r', type=str)
 @click.option('--split', '-s', type=str, default='train')
 @click.option('--object_class', '-cls', type=str)
 @click.option('--evaluation_model', '-e', type=str,)
 @click.option('--input_channels', '-i', type=int, default=4)
-@click.option('--pointnet_checkpoint_path', '-pckpt', type=str, default='evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects/last.ckpt')
+@click.option('--pointnet_checkpoint_path', '-pckpt', type=str)
 @click.option('--class_label',   type=int, default=0)
 @click.option('--real', type=bool, default=False) # default False
 def main(model_name, root, split, object_class, evaluation_model, input_channels, pointnet_checkpoint_path, class_label, real):

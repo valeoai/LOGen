@@ -22,9 +22,6 @@ class NuscenesPairedObjectsDataLoader(Dataset):
         super().__init__()
         paths = glob.glob(f'{root}/*/{object_class}/**')
         self.input_channels = input_channels
-        # with open('/home/nsamet/scania/ekirby/datasets/augmented_nuscenes_datasets/nuscenes_scene_token_to_split.json', 'r') as f:
-        #     self.split_mapping = json.load(f)[split]
-        # self.dirs = [path for path in paths if path.split('/')[-3] in self.split_mapping]
         self.dirs = paths
 
     def __len__(self):

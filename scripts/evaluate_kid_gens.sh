@@ -2,17 +2,17 @@
 
 eval_model=nuscenes
 split=val
-root_dir=/home/nsamet/scania/nsamet/replaced_nuscenes_datasets
+root_dir=replaced_nuscenes_datasets
 
 model_type=$1 # xs_1a_dit3d_pe_4ch
 channels=$2
 
 if [[ "$channels" -eq 4 ]]; then
-pnet_ckpt=/home/nsamet/no_backup/repos/LiDAR-Object-Generation/evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects/last.ckpt
+pnet_ckpt=evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects/last.ckpt
 fi
 
 if [[ "$channels" -eq 3 ]]; then
-pnet_ckpt=/home/nsamet/no_backup/repos/LiDAR-Object-Generation/evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects_3ch/last.ckpt
+pnet_ckpt=evaluation/fpd/from_scratch/checkpoints/cleaned_nuscenes_objects_3ch/last.ckpt
 fi
 
 echo $pnet_ckpt
